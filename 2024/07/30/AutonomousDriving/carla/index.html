@@ -213,7 +213,6 @@ if (true) {
 </li>
 <li><p>安装numpy和pygame</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install numpy pygame</span><br></pre></td></tr></table></figure>
-
 <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/11andyy/Pic0@master/img/image-20240730183931918.png" alt="image-20240730183931918"></p>
 </li>
 <li><p>进入github下载 0.9.15版本</p>
@@ -269,25 +268,20 @@ if (true) {
 <h1 id="World-and-Client-世界和客户端"><a href="#World-and-Client-世界和客户端" class="headerlink" title="World and Client 世界和客户端"></a>World and Client 世界和客户端</h1><h2 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h2><p>Client是User和World交互的方式，用户通过Client连接到Server，通过脚本执行信息检索和命令，模拟进行操作</p>
 <h3 id="Client-creation-创建Client"><a href="#Client-creation-创建Client" class="headerlink" title="Client creation 创建Client"></a>Client creation 创建Client</h3><p>建立Client需要一个IP地址和两个TCP端口，以及工作线程数量（默认为0）</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">client = carla.Client(<span class="string">&#x27;localhost&#x27;</span>, <span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
-
 <p>默认第二个端口为2000+1</p>
 <p>创建客户端以后，设置超时时间，网络链接故障后会及时报错</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">client.set_timeout(<span class="number">10.0</span>) <span class="comment"># seconds</span></span><br></pre></td></tr></table></figure>
-
 <p>当然可以一次性连接多个客户端运行多个脚本，但是会使得通信变得复杂</p>
 <p>Client和Server的版本不一致可能会产生问题，可以通过<code>get_client_version()</code>和<code>get_server_version()</code>查看版本</p>
 <h3 id="World-connection-连接世界"><a href="#World-connection-连接世界" class="headerlink" title="World connection 连接世界"></a>World connection 连接世界</h3><p>客户端可以非常容易地连接和检索世界</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">world = client.get_world()</span><br></pre></td></tr></table></figure>
-
 <p>客户端也可以获取当前可用的地图，将原地图destory，并将新地图导入到世界中</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(client.get_available_maps())</span><br><span class="line">...</span><br><span class="line">world = client.load_world(<span class="string">&#x27;Town01&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>每个世界对象都有一个ID，当Client调用<code>load_world()</code>或<code>reload_world()</code>时，会将原先的世界对象销毁，从头创建一个新的世界，在这个过程中，虚幻引擎不会被重启</p>
 <h3 id="Using-commands-使用命令行"><a href="#Using-commands-使用命令行" class="headerlink" title="Using commands 使用命令行"></a>Using commands 使用命令行</h3><p>命令是对一些常用的Carla方法的改编，可以分批应用</p>
 <p><code>command.SetAutopilot</code>等同于<code>Vechicle.set_autopilot</code></p>
 <p>使用<code>Client.apply_batch</code>或<code>Client.apply_batch_sync</code>方法可以在一个仿真步骤中应用一系列的命令，比如下列命令是销毁所有车辆</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">client.apply_batch([carla.command.DestroyActor(x) <span class="keyword">for</span> x <span class="keyword">in</span> vechicles_list])</span><br></pre></td></tr></table></figure>
-
 <h3 id="Other-client-utilities-其他的客户端工具"><a href="#Other-client-utilities-其他的客户端工具" class="headerlink" title="Other client utilities 其他的客户端工具"></a>Other client utilities 其他的客户端工具</h3><ul>
 <li>Traffic manager：负责设置每辆车为自动驾驶，以重现城市交通</li>
 <li>Recoder：使用快照保存状态，方便重现场景</li>

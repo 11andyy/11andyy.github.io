@@ -210,7 +210,7 @@ if (true) {
 <li><strong><code>git init</code>：将当前目录配置成git仓库，信息记录在隐藏的<code>.git</code>文件夹中</strong></li>
 </ol>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
-<li><strong><code>git add XX </code>：将XX文件添加到暂存区</strong></li>
+<li><strong><code>git add XX</code>：将XX文件添加到暂存区</strong></li>
 <li><strong><code>git commit -m &quot;给自己看的备注信息&quot;</code>：将暂存区的内容提交到当前分支</strong></li>
 <li><strong><code>git status</code>：查看仓库状态</strong></li>
 <li><strong><code>git log</code>：查看当前分支的所有版本</strong></li>
@@ -229,20 +229,20 @@ if (true) {
 </ol>
 <h2 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h2><ol>
 <li><code>git rm --cached XX</code>：将文件从仓库索引目录中删掉，不希望管理这个文件</li>
-<li><strong><code>git restore --staged xx</code>：&#x3D;&#x3D;将xx从暂存区里移除&#x3D;&#x3D;</strong></li>
-<li><strong><code>git checkout — XX或git restore XX</code>：&#x3D;&#x3D;将XX文件尚未加入暂存区的修改全部撤销&#x3D;&#x3D;</strong></li>
+<li><strong><code>git restore --staged xx</code>：==将xx从暂存区里移除==</strong></li>
+<li><strong><code>git checkout — XX或git restore XX</code>：==将XX文件尚未加入暂存区的修改全部撤销==</strong></li>
 </ol>
 <h2 id="代码回滚"><a href="#代码回滚" class="headerlink" title="代码回滚"></a>代码回滚</h2><ol>
-<li><code>git reset --hard HEAD^ </code>或<code>git reset --hard HEAD~</code> ：将代码库回滚到上一个版本</li>
+<li><code>git reset --hard HEAD^</code>或<code>git reset --hard HEAD~</code> ：将代码库回滚到上一个版本</li>
 <li><code>git reset --hard HEAD^^</code>：往上回滚两次，以此类推</li>
 <li><code>git reset --hard HEAD~100</code>：往上回滚100个版本</li>
 <li><strong><code>git reset --hard</code> 版本号：回滚到某一特定版本</strong></li>
 </ol>
-<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>&#x3D;&#x3D;<strong>使用远程仓库要先将当前服务器的公钥添加到仓库的ssh密钥设置中</strong>&#x3D;&#x3D;</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>==<strong>使用远程仓库要先将当前服务器的公钥添加到仓库的ssh密钥设置中</strong>==</p>
 <ol>
 <li><strong><code>git remote add origin git@git.acwing.com:xxx/XXX.git</code>：将本地仓库关联到远程仓库</strong></li>
-<li><code> git push --set-upstream origin master</code></li>
-<li><code>git push -u (第一次需要-u以后不需要) </code>：将当前分支推送到远程仓库</li>
+<li><code>git push --set-upstream origin master</code></li>
+<li><code>git push -u (第一次需要-u以后不需要)</code>：将当前分支推送到远程仓库</li>
 <li><code>git push origin branch_name</code>：将本地的某个分支推送到远程仓库</li>
 <li><strong><code>git clone git@git.acwing.com:xxx/XXX.git</code>：将远程仓库XXX下载到当前目录下</strong></li>
 <li><code>git push --set-upstream o</code></li>
@@ -262,8 +262,8 @@ if (true) {
 <li><code>git branch -d branch_name</code>：删除本地仓库的branch_name分支</li>
 <li><code>git push --set-upstream origin branch_name</code>：设置本地的branch_name分支对应远程仓库的branch_name分支</li>
 <li><code>git push -d origin branch_name</code>：删除远程仓库的branch_name分支</li>
-<li><code>git checkout -t origin/branch_name </code>：将远程的branch_name分支拉取到本地</li>
-<li><code>git pull </code>：将远程仓库的当前分支与本地仓库的当前分支合并</li>
+<li><code>git checkout -t origin/branch_name</code>：将远程的branch_name分支拉取到本地</li>
+<li><code>git pull</code>：将远程仓库的当前分支与本地仓库的当前分支合并</li>
 <li><code>git pull origin branch_name</code>：将远程仓库的branch_name分支与本地仓库的当前分支合并</li>
 <li><code>git branch --set-upstream-to=origin/branch_name1 branch_name2</code>：将远程的branch_name1分支与本地的branch_name2分支对应</li>
 </ol>
@@ -275,7 +275,6 @@ if (true) {
 <li><code>git stash list</code>：查看栈中所有元素</li>
 </ol>
 <h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin git@git.acwing.com:xxx/XXX.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
 </article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">11andyy</div><div class="post-copyright__author_desc">生活明朗，万物可爱</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://11andyy.github.io/2023/05/20/Tools/Git/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://11andyy.github.io/2023/05/20/Tools/Git/')">Git</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://11andyy.github.io/2023/05/20/Tools/Git/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Git&amp;url=https://11andyy.github.io/2023/05/20/Tools/Git/&amp;pic=https://cdn.jsdelivr.net/gh/11andyy/Pic0@master/img/CoUwYnqI.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
   var currentPageUrl = window.location.href;
   var input = document.createElement("input");
